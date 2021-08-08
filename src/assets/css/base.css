@@ -1,0 +1,37 @@
+@import url(./normalize.css);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#tab-bar {
+  display: flex;
+  /* line-height: 49px; */
+  background: #f2f2f2;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0px -1px 3px rgba(100, 100,100, 0.3);
+}
+#tab-bar-item {
+  flex:1;
+  text-align: center;
+  height: 49px;
+  color: rgb(102, 102, 102);
+}
+
+#tab-bar-item i{ 
+  line-height: 27px;
+  font-size: 20px;
+}
+
+#tab-bar .active{
+  color: pink;
+}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
