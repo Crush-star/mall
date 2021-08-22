@@ -1,106 +1,16 @@
 <template>
   <div>
     <scroll class="wrapper">
-      <li>qqq1</li>
-      <li>qqq2</li>
-      <li>qqq3</li>
-      <li>qqq4</li>
-      <li>qqq5</li>
-      <li>qqq6</li>
-      <li>qqq7</li>
-      <li>qqq8</li>
-      <li>qqq9</li>
-      <li>qqq10</li>
-      <li>qqq11</li>
-      <li>qqq12</li>
-      <li>qqq13</li>
-      <li>qqq14</li>
-      <li>qqq15</li>
-      <li>qqq16</li>
-      <li>qqq17</li>
-      <li>qqq18</li>
-      <li>qqq19</li>
-      <li>qqq20</li>
-      <li>qqq21</li>
-      <li>qqq22</li>
-      <li>qqq23</li>
-      <li>qqq24</li>
-      <li>qqq25</li>
-      <li>qqq26</li>
-      <li>qqq27</li>
-      <li>qqq28</li>
-      <li>qqq29</li>
-      <li>qqq30</li>
-      <li>qqq31</li>
-      <li>qqq32</li>
-      <li>qqq33</li>
-      <li>qqq34</li>
-      <li>qqq35</li>
-      <li>qqq36</li>
-      <li>qqq37</li>
-      <li>qqq38</li>
-      <li>qqq39</li>
-      <li>qqq40</li>
-      <li>qqq41</li>
-      <li>qqq42</li>
-      <li>qqq43</li>
-      <li>qqq44</li>
-      <li>qqq45</li>
-      <li>qqq46</li>
-      <li>qqq47</li>
-      <li>qqq48</li>
-      <li>qqq49</li>
-      <li>qqq50</li>
-      <li>qqq51</li>
-      <li>qqq52</li>
-      <li>qqq53</li>
-      <li>qqq54</li>
-      <li>qqq55</li>
-      <li>qqq56</li>
-      <li>qqq57</li>
-      <li>qqq58</li>
-      <li>qqq59</li>
-      <li>qqq60</li>
-      <li>qqq61</li>
-      <li>qqq62</li>
-      <li>qqq63</li>
-      <li>qqq64</li>
-      <li>qqq65</li>
-      <li>qqq66</li>
-      <li>qqq67</li>
-      <li>qqq68</li>
-      <li>qqq69</li>
-      <li>qqq70</li>
-      <li>qqq71</li>
-      <li>qqq72</li>
-      <li>qqq73</li>
-      <li>qqq74</li>
-      <li>qqq75</li>
-      <li>qqq76</li>
-      <li>qqq77</li>
-      <li>qqq78</li>
-      <li>qqq79</li>
-      <li>qqq80</li>
-      <li>qqq81</li>
-      <li>qqq82</li>
-      <li>qqq83</li>
-      <li>qqq84</li>
-      <li>qqq85</li>
-      <li>qqq86</li>
-      <li>qqq87</li>
-      <li>qqq88</li>
-      <li>qqq89</li>
-      <li>qqq90</li>
-      <li>qqq91</li>
-      <li>qqq92</li>
-      <li>qqq93</li>
-      <li>qqq94</li>
-      <li>qqq95</li>
-      <li>qqq96</li>
-      <li>qqq97</li>
-      <li>qqq98</li>
-      <li>qqq99</li>
-      <li>qqq100</li>
+      <div class="left" @click='click'>
+        <div class="item" v-for="item of scotList" >
+          <!-- <div v-for='i of item.data.list'>
+          <img :src="i.image" alt=""><span>{{i.title}}</span>
+        </div> -->
+          <img :src="item.data.list[0].image" alt="" /><span>{{
+            item.data.list[0].title
+          }}</span>
+        </div>
+      </div>
     </scroll>
   </div>
 </template>
@@ -108,23 +18,38 @@
 <script>
 import scroll from '@/components/common/scroll'
 import BScroll from 'better-scroll'
+
+import { getSortList, getSort } from '@/network/home.js'
 export default {
   name: 'sort',
   components: {
     scroll,
   },
   data() {
-    return {}
+    return {
+      scotList: [],
+    }
   },
   methods: {
-
-    
     /*     getContent() {
       this.$store
         .dispatch('getContent')
         .then((res) => this.$store.commit('getContent', res))
         .catch((err) => this.$store.commit('getContent', err))
     }, */
+    click(e) {
+      console.log(e.target.localName);
+    }
+  },
+  mounted() {
+    getSortList().then((res) => {
+      for (let i of res.data.category.list) {
+        getSort(i).then((res) => {
+          this.scotList.push(res)
+        })
+      }
+    })
+    console.log(this.scotList)
   },
   /*   mounted() {
       let wrapper = document.querySelector(".wrapper");
@@ -143,9 +68,24 @@ export default {
 </script>
 <style scoped>
 .wrapper {
-  height: 100vh;
-  background-color: pink;
+  height: calc(100vh - 49px);
   overflow: hidden;
+  font-size: 14px;
   /* overflow-y: scroll; */
+}
+.wrapper .left {
+  display: inline-block;
+  width: 60px;
+  padding:0px 10px;
+  border-right: 1px solid rgba(102, 102, 102, 0.13);
+  text-align: center;
+}
+.item {
+  width: 100%;
+  box-sizing: border-box;
+  margin:10px 0px ;
+}
+img {
+  width: 100%;
 }
 </style>
