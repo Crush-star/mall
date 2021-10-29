@@ -1,37 +1,38 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/Crush-star/mall/edit/gh-pages/docs/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Crush-star/mall/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/tu.png" />
+    <title>mall</title>
+    <link href="/css/chunk-05c0139d.71274136.css" rel="prefetch" />
+    <link href="/css/chunk-46d851f8.1b996598.css" rel="prefetch" />
+    <link href="/css/chunk-5abad69c.94509e0b.css" rel="prefetch" />
+    <link href="/css/chunk-6503a7aa.c5614662.css" rel="prefetch" />
+    <link href="/css/chunk-934aff2c.33d45a5c.css" rel="prefetch" />
+    <link href="/js/chunk-05c0139d.61d08873.js" rel="prefetch" />
+    <link href="/js/chunk-2d0ea0f0.75579a57.js" rel="prefetch" />
+    <link href="/js/chunk-46d851f8.aad24ddf.js" rel="prefetch" />
+    <link href="/js/chunk-5abad69c.6433d9bd.js" rel="prefetch" />
+    <link href="/js/chunk-6503a7aa.9bfc3555.js" rel="prefetch" />
+    <link href="/js/chunk-934aff2c.9ea572da.js" rel="prefetch" />
+    <link href="/css/app.b2129944.css" rel="preload" as="style" />
+    <link href="/css/chunk-vendors.a16c4353.css" rel="preload" as="style" />
+    <link href="/js/app.9b136475.js" rel="preload" as="script" />
+    <link href="/js/chunk-vendors.0e90d6b5.js" rel="preload" as="script" />
+    <link href="/css/chunk-vendors.a16c4353.css" rel="stylesheet" />
+    <link href="/css/app.b2129944.css" rel="stylesheet" />
+  </head>
+  <body>
+    <noscript
+      ><strong
+        >We're sorry but mall doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong
+      ></noscript
+    >
+    <div id="app"></div>
+    <script src="/js/chunk-vendors.0e90d6b5.js"></script>
+    <script src="/js/app.9b136475.js"></script>
+  </body>
+</html>
